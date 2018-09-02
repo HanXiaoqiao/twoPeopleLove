@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两个人-记录甜蜜时刻</title>
+    <link rel="stylesheet" href="/public/css/animate.min.css" />
+    <link rel="stylesheet" href="/public/css/reset.css" />
+    <link rel="stylesheet" href="/public/css/head.css" />
+    <script src="/public/javascript/jquery.js"></script>
+    <script src="/public/javascript/jPages.js"></script>
+    <script src="/public/javascript/head.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="content clearfix">
+            <div class="header_left fl">
+                <div class="logo fl">
+                    <img src="/public/images/logo.png" alt="网站logo" />
+                </div>
+                <div class="header_nav fl">
+                    <ul class="header_nav_list">
+                        <li class="fl" style="position: relative;"><a class="hnl_a" href="">首页</a>
+                            <ul style="position: absolute;left:0;top:50px;width:100%;">
+                                <li><a href="">日志</a></li>
+                                <li><a href="">照片</a></li>
+                            </ul>
+                        </li>
+                        <li class="fl" style="position: relative;"><a class="hnl_a" href="">日历</a>
+                            <ul style="position: absolute;left:0;top:50px;width:100%;">
+                                <li><a href="">脚印</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header_right fr">
+                <a href="javascript:;" class="hr_info" id="hr">
+                    <img src="/public/images/person_photo.png" alt="人物头像" class="hr_photo" />
+                    <span class="triangle"></span>
+                </a>
+                <div class="user_info" id="userInfo">
+                    <p class="ui_triangle"></p>
+                    <div class="ui_content clearfix">
+                        <p>{{userInfo.myname}}&{{userInfo.yourname}}</p>
+                        <p>{{userInfo.email}}</p>
+                        <p>我们在一起<span id="loveDate" style="color:red;font-weight:600;"></span>天了</p>
+                        <p><a href="/main/story">我们的故事</a></p>
+                        <p class="fr"><a href="/api/user/logout" id="logout">退出登录</a></p>
+                        <input type="hidden" class="hid" value="{{userInfo.date}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        {% block main %}
+
+        {% endblock %}
+    </div>
+    <div class="footer">
+        <div class="foot-content">
+            <div class="fc-top">
+                <ul class="fcList clearfix">
+                    <li><a href="">帮助</a></li>
+                    <li><a href="">博客</a></li>
+                    <li><a href="">新浪微博</a></li>
+                    <li><a href="">微信</a></li>
+                    <li><a href="">App</a></li>
+                    <li><a href="">旧版入口</a></li>
+                </ul>
+            </div>
+            <div class="fc-bottom">
+                <p class="fcText">2009－2013 © liageren.com Enjoy your life ♥ 京ICP备09034393号 京公网安备110114000689</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

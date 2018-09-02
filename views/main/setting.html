@@ -1,0 +1,64 @@
+{% extends 'head.html' %}
+{% block main %}
+<div class="container">
+    <div class="form clearfix">
+        <div class="formTop">
+            <p>账户 / 编辑</p>
+        </div>
+        <div id="registerBox" class="clearfix">
+            <div class="two-people fl">
+                <p style="font-size:24px;color:#3c3c3c;font-weight:800;">关于你</p>
+                <!--<input type="file" name="myphoto" />-->
+                <div class="imgbox">
+                    <div class="imgnum">
+                        <input type="file" class="filepath" />
+                        <span class="close">X</span>
+                        <img src="/public/images/btn.png" alt="点击添加头像" class="img1" />
+                        <img class="img2" name="myphoto" src="" />
+                    </div>
+                    <p class="addimg">添加头像</p>
+                </div>
+                <p style="margin-top:190px;">邮箱</p>
+                <input type="email" name="email" disabled placeholder="你的邮箱" value="{{userInfo.email}}" />
+                <p>昵称</p>
+                <input type="text" name="myname" placeholder="你的昵称" value="{{userInfo.myname}}" />
+                <p>生日</p>
+                <input type="text" name="mybirth" placeholder="你的生日" />
+            </div>
+            <div class="two-people fr">
+                <p style="font-size:24px;color:#3c3c3c;font-weight:800;">关于另一半</p>
+                <!--<input type="file" name="yourphoto" />-->
+                <div class="imgbox">
+                    <div class="imgnum">
+                        <input type="file" class="filepath" />
+                        <span class="close">X</span>
+                        <img src="/public/images/btn.png" alt="点击添加头像" class="img1" />
+                        <img src="" class="img2" name="yourphoto" />
+                    </div>
+                    <p class="addimg">添加头像</p>
+                </div>
+                <p style="margin-top:190px;">邮箱</p>
+                <input type="email" disabled name="youremail" placeholder="另一半的邮箱" value="{{userInfo.youremail}}" />
+                <p>昵称</p>
+                <input type="text" disabled name="yourname" placeholder="另一半的昵称" value="{{userInfo.yourname}}" />
+                <p>生日</p>
+                <input type="text" name="yourbirth" placeholder="另一半的的生日" />
+            </div>
+            <div class="two-people pwd" style="width:100%;">
+                <p style="font-size:24px;color:#3c3c3c;font-weight:800;">爱情宣言</p>
+                <textarea name="hope" id="" rows="5" style="width:70%;"></textarea>
+            </div>
+            <p class="err-info" style="margin-left:5%;color:red;height:20px;"></p>
+            <div class="form-foot">
+                <input class="submit" type="submit" value="保存" id="register1" />
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        var $css=$('<link rel="stylesheet" href="/public/css/setting.css" />');
+        $("head").append($css);
+    })
+</script>
+{% endblock %}

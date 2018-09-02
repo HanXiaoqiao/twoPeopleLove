@@ -1,0 +1,16 @@
+.container{background:#f0f0f0;padding:50px 0;}
+.container .form{width:62%;margin:0 auto;background:#fff;box-shadow: 0px 0px 2px 2px #ccc;}
+.container .form .formTop{font-size:25px;font-weight:800;height:50px;line-height: 50px;color:#3c3c3c;background:#eaeaea;padding-left:10px;}
+.container .form .two-people{width:40%;padding:5% 5% 2%;line-height:30px;}
+.container .form .two-people p{font-size:16px;font-weight:600;color:#555;}
+.container .form .two-people input{border:1px solid #ccc;height:35px;width:80%;text-indent: 5px;border-radius:5px;}
+.container .form .form-foot{width:100%;padding:0 5% 5%;line-height:30px;}
+.container .form .form-foot .ffa{color:red;text-decoration: underline;}
+.container .form .form-foot .submit{width:150px;height:50px;font-size:18px;font-weight:500;letter-spacing:1px;color:white;border-radius:5px;line-height: 50px;text-align: center;background:#5bb75b;border:1px solid #45bcd2;}
+.container .form .two-people .loginInput{width:60%;}
+.imgbox{float: left;margin-bottom: 20px;margin-top: 20px;position: relative;width: 182px;height: 142px;border: 2px solid #45bcd2;border-radius:10px;overflow: hidden;}
+.imgnum{left: 0px;top: 0px;margin: 0px;padding: 0px;}
+.container .form .two-people .imgbox .imgnum input.filepath{position: absolute;width: 182px;height: 142px;opacity: 0;}
+.imgnum img{width: 100%;height: 100%;}
+.close{color: red;position: absolute;left: 170px;top: 0px;display: none;}
+.container .form .two-people .imgbox .addimg{position:absolute;left:0;top:60px;height:35px;width:100%;text-align: center;color:red;font-weight:600;}

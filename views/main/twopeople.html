@@ -1,0 +1,417 @@
+{% extends 'head.html' %}
+{% block main %}
+<div class="block">
+    <pre style="white-space: pre-wrap;line-height:35px;">
+        我是一只小小鸟   想要飞飞更高
+        寻寻觅觅，一个温暖的怀抱     这样的要求算不算太高
+    </pre>
+</div>
+<script>
+    $(function(){
+        $(".block").on("click",function(){
+            $(this).hide();
+            $("body").removeClass("add-hidden");
+        });
+        $(".bg-color").on("click",function(){
+            var w = $(document).width();
+            var h = $(window).height();
+            var t = $(window).scrollTop();
+            $(".block").css({"top":t+"px","height":h+"px"});
+            var content = $(this).children().html();
+            $(".block").children("pre").html(content);
+            $(".block").show();
+            if($(".block").show()){
+                $("body").addClass("add-hidden");
+            }
+        });
+        $("div.holder").jPages({
+            containerID: "itemContainer",
+            previous: "←左",
+            next: "右→",
+            perPage: 3
+        });
+        $("div.holderImg").jPages({
+            containerID: "itemImg",
+            previous: "←左",
+            next: "右→",
+            perPage: 8
+        });
+        $("div.holderImg").jPages({
+            containerID: "itemImg1",
+            previous: "←左",
+            next: "右→",
+            perPage: 8
+        });
+        $("div.holder").jPages({
+            containerID: "itemContainer1",
+            previous: "←左",
+            next: "右→",
+            perPage: 3
+        });
+    });
+</script>
+<div class="wrap">
+    <!--<div class="bg" style="background:#202020;position: absolute;top:0;left:0;width:100%;z-index:-5;"></div>-->
+    <div class="wrap-all">
+        <div class="wrapContent">
+            <div class="wrapC-top">
+                <div class="wrapC-img"><img src="/public/images/cover_4.jpg" alt="" /></div>
+                <div class="wrapC-info">
+                    <div class="info-photo" style="left:2%"><img src="/public/images/person_photo.png" alt=""><p>{{userInfo.myname}}</p></div>
+                    <div class="info-photo" style="left:18%"><img src="/public/images/person_photo.png" alt=""><p>{{userInfo.yourname}}</p></div>
+                    <div class="info-description" style="margin-top:-10px;">
+                        <p style="font-size:15px;height:25px;font-weight:500;">爱情宣言：</p>
+                        <div class="info-birthday clearfix">
+                            <div class="fl" style="background: url(../../public/images/spacer.png);background-position:0 -1072px;height:20px;width:25px;"></div><span>{{userInfo.myname}}<a href="/user/setting" style="color:red;text-decoration: underline;margin-left:5px;cursor:pointer;">设置生日</a>，最后登录：<span id="loginDate">7-23</span></span>
+                        </div>
+                        <div class="info-zoom clearfix">
+                            <div class="fl" style="background: url(../../public/images/spacer.png);background-position:0 -3132px;height:20px;width:25px;"></div><span>空间建立：已经<span class="zoomDay"></span>天</span>
+                            <input type="hidden" id="registerDay" value="{{userInfo.loginDate}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapC-bottom">
+        <div class="wrap-banner">
+            <ul class="banner">
+                <li class="bannerLi">
+                    <a href="javascript:;" class="list-a"><i style="display: inline-block;width:15%;height:20px;vertical-align:middle;background: url(../../public/images/spacer.png);background-position:0 -8958px"></i>全部</a>
+                    <div class="div-list div-list1">
+                        <div class="box-title">
+                            <img src="/public/images/list_title.png" alt="">
+                        </div>
+                        <div class="box-ul">
+                            <ul class="box-list clearfix">
+                                <li class="box-list-li">
+                                    <a href="javascript:;" class="listBox-a"><i style="display: inline-block;width:25%;height:30px;vertical-align:middle;background: url(../../public/images/spacer.png) no-repeat;background-position:0 -3808px"></i>爱的开始</a>
+                                    <div class="list-show">
+                                        <img src="/public/images/msgquote.png" alt="" class="heart">
+                                        <div class="list-show-cont">
+                                            <h1>时间轴在等待着你们的第一条记录。</h1>
+                                            <div class="belles-lettres">
+                                                <span>于千万人之中遇见你所要遇见的人,于千万年之中,时间的无涯的荒野里,没有早一步,也没有晚一步,刚巧赶上了,没有别的话可说,惟有轻轻地问一声:"噢,你也在这里?</span>
+                                                <br>
+                                                <p style="text-align:right;"><cite>----张爱玲</cite></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="box-list-li">
+                                    <a href="javascript:;" class="listBox-a"><i style="display: inline-block;width:20%;height:25px;vertical-align:middle;background: url(../../public/images/publisher.png) no-repeat;background-position:0 -135px"></i>我的状态</a>
+                                    <div class="list-show">
+                                        <div class="null-info" style="display:none;">
+                                            <h2>这里什么都没有哟，写点给以后的回忆吧！</h2>
+                                        </div>
+                                        <div class="list-show-cont" id="itemContainer">
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇见你所要遇见的人,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇见你的无涯的荒野里,没   一步,刚巧赶上了,没有别的话可说,于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,刚巧赶上了,没有别的话可说,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,刚巧赶上了,没有别的话可说,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,刚巧赶上了,没有别的话可说,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,刚巧赶上了,没有别的话可说,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,刚巧赶上了,没有别的话可说,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                        </div>
+                                        <div class="holder">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="box-list-li">
+                                    <a href="javascript:;" class="listBox-a"><i style="display: inline-block;width:20%;height:25px;vertical-align:middle;background: url(../../public/images/publisher.png) no-repeat;background-position:0 -27px"></i>照片墙</a>
+                                    <div class="list-show">
+                                        <div id="itemImg" class="itemImg">
+                                            <img src="/public/images/1.jpg">
+                                            <img src="/public/images/2.jpg">
+                                            <img src="/public/images/3.jpg">
+                                            <img src="/public/images/4.jpg">
+                                            <img src="/public/images/5.jpg">
+                                            <img src="/public/images/6.jpg">
+                                            <img src="/public/images/7.jpg">
+                                            <img src="/public/images/8.jpg">
+                                            <img src="/public/images/6.jpg">
+                                            <img src="/public/images/7.jpg">
+                                            <img src="/public/images/8.jpg">
+                                            <img src="/public/images/8.jpg">
+                                        </div>
+                                        <div class="holderImg">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="box-list-li">
+                                    <a href="javascript:;" class="listBox-a"><i style="display: inline-block;width:20%;height:25px;vertical-align:middle;background: url(../../public/images/publisher.png) no-repeat;background-position:0 -108px"></i>时间轴</a>
+                                    <div class="list-show">
+                                        <ul class="timeline">
+                                            <li class="timeList clearfix">
+                                                <div class="timeShow">2017-08-02</div>
+                                                <div class="lineNode"><img src="/public/images/lineNode.png" alt=""></div>
+                                                <div class="timeContainer">
+                                                    <pre>这里记录着所有
+                                                        得故事。
+                                                        我们相爱的  不爱的
+                                                        。。。</pre>
+                                                </div>
+                                            </li>
+                                            <li class="timeList clearfix">
+                                                <div class="timeShow">2017-08-02</div>
+                                                <div class="lineNode"><img src="/public/images/lineNode.png" alt=""></div>
+                                                <div class="timeContainer">
+                                                    <pre>这里记录着所有     all world</pre>
+                                                </div>
+                                            </li>
+                                            <li class="timeList clearfix">
+                                                <div class="timeShow">2017-08-02</div>
+                                                <div class="lineNode"><img src="/public/images/lineNode.png" alt=""></div>
+                                                <div class="timeContainer">
+                                                    <pre>这里记录着所有
+                                                        我们相爱的  不爱</pre>
+                                                </div>
+                                            </li>
+                                            <li class="timeList clearfix">
+                                                <div class="timeShow">2017-08-02</div>
+                                                <div class="lineNode"><img src="/public/images/lineNode.png" alt=""></div>
+                                                <div class="timeContainer">
+                                                    <pre>这里记录着所有得故事。
+                                                        我们相爱的  不爱的
+                                                        。。。</pre>
+                                                </div>
+                                            </li>
+                                            <li class="timeList clearfix">
+                                                <div class="timeShow">2017-08-02</div>
+                                                <div class="lineNode"><img src="/public/images/lineNode.png" alt=""></div>
+                                                <div class="timeContainer">
+                                                    <pre>爱就一个字，我只说一次</pre>
+                                                </div>
+                                            </li>
+                                            <li class="timeList clearfix">
+                                                <div class="timeShow">2017-08-02</div>
+                                                <div class="lineNode"><img src="/public/images/lineNode.png" alt=""></div>
+                                                <div class="timeContainer">
+                                                    <pre>我们今天去了成都欢乐谷，在这里我们留下了太多的美丽。。。
+                                                    尤其是在旁边的小酒店！     因为房钱太TMD贵了</pre>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bannerLi">
+                    <a href="javascript:;" class="list-a"><i style="display: inline-block;width:15%;height:20px;vertical-align:middle;background: url(../../public/images/spacer.png);background-position:0 -1198px"></i>照片</a>
+                    <div class="div-list div-list2">
+                        <div class="box-ul">
+                            <ul class="box-list clearfix">
+                                <li class="box-list-li">
+                                    <a href="javascript:;" class="listBox-a"><i style="display: inline-block;width:25%;height:30px;vertical-align:middle;background: url(../../public/images/spacer.png) no-repeat;background-position:0 -3808px"></i>上传照片</a>
+                                    <div class="list-show">
+                                        <div class="put-in">
+                                            <p>上传照片</p>
+                                        </div>
+                                        <div class="img-bottom">
+                                            <img src="/public/images/album.jpg" alt="" />
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="box-list-li">
+                                    <a href="javascript:;" class="listBox-a"><i style="display: inline-block;width:20%;height:25px;vertical-align:middle;background: url(../../public/images/publisher.png) no-repeat;background-position:0 -27px"></i>照片墙</a>
+                                    <div class="list-show">
+                                        <div id="itemImg1" class="itemImg">
+                                            <img src="/public/images/1.jpg">
+                                            <img src="/public/images/2.jpg">
+                                            <img src="/public/images/3.jpg">
+                                            <img src="/public/images/4.jpg">
+                                            <img src="/public/images/5.jpg">
+                                            <img src="/public/images/6.jpg">
+                                            <img src="/public/images/7.jpg">
+                                            <img src="/public/images/8.jpg">
+                                            <img src="/public/images/6.jpg">
+                                            <img src="/public/images/7.jpg">
+                                            <img src="/public/images/8.jpg">
+                                            <img src="/public/images/8.jpg">
+                                        </div>
+                                        <div class="holderImg">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bannerLi">
+                    <a href="javascript:;" class="list-a"><i style="display: inline-block;width:15%;height:20px;vertical-align:middle;background: url(../../public/images/spacer.png);background-position:0 -10421px"></i>日志</a>
+                    <div class="div-list div-list3">
+                        <div class="box-ul">
+                            <ul class="box-list clearfix">
+                                <li class="box-list-li">
+                                    <a href="javascript:;" class="listBox-a"><i style="display: inline-block;width:20%;height:25px;vertical-align:middle;background: url(../../public/images/publisher.png) no-repeat;background-position:0 -135px"></i>我的状态</a>
+                                    <div class="list-show">
+                                        <div class="null-info" style="display:none;">
+                                            <h2>这里什么都没有哟，写点给以后的回忆吧！</h2>
+                                        </div>
+                                        <div class="list-show-cont" id="itemContainer1">
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇见你所要遇见的人,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇见你的无涯的荒野里,没   一步,刚巧赶上了,没有别的话可说,于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,刚巧赶上了,没有别的话可说,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,刚巧赶上了,没有别的话可说,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,刚巧赶上了,没有别的话可说,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,刚巧赶上了,没有别的话可说,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                            <div class="belles-lettres">
+                                                <a class="bg-color" href="javascript:;" style="width:100%;"><span class="belles-lettres-span">于千万人之中遇   ,时间的无涯     野里,没有早一步,也没有晚一步,刚巧赶上了,没有别的话可说,惟有轻轻地问一声:"噢,你也在这里?</span></a>
+                                                <p style="text-align:right;"><cite>2017-05-13</cite></p>
+                                            </div>
+                                        </div>
+                                        <div class="holder">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="box-list-li">
+                                    <a href="javascript:;" class="listBox-a"><i style="display: inline-block;width:20%;height:25px;vertical-align:middle;background: url(../../public/images/publisher.png) no-repeat;background-position:0 -108px"></i>发表状态</a>
+                                    <div class="list-show">
+                                        <form role="form" method="post">
+
+                                            <div class="form-group">
+                                                <p class="form-title">写动态：</p>
+                                                <textarea class="form-control" rows="10" placeholder="写下你此时想说的吧" name="description"></textarea>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <p class="form-title">发表时间:</p>
+                                                <input type="text" value="" name="time" />
+                                            </div>
+
+                                            <button type="submit" class="btn">发表</button>
+                                        </form>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bannerLi">
+                    <a href="javascript:;" class="list-a"><i style="display: inline-block;width:15%;height:20px;vertical-align:middle;background: url(../../public/images/spacer.png);background-position:0 -1162px"></i>脚印</a>
+                    <div class="div-list div-list4">
+                        <div class="box-ul">
+                            <ul class="box-list clearfix">
+                                <li class="box-list-li">
+                                    <a href="javascript:;" class="listBox-a"><i style="display: inline-block;width:20%;height:25px;vertical-align:middle;background: url(../../public/images/publisher.png) no-repeat;background-position:0 0px"></i>记录脚印</a>
+                                    <div class="list-show">
+
+                                    </div>
+                                </li>
+                                <li class="box-list-li">
+                                    <a href="javascript:;" class="listBox-a"><i style="display: inline-block;width:20%;height:25px;vertical-align:middle;background: url(../../public/images/publisher.png) no-repeat;background-position:0 -108px"></i>时间轴</a>
+                                    <div class="list-show">
+                                        <ul class="timeline">
+                                            <li class="timeList clearfix">
+                                                <div class="timeShow">2017-08-02</div>
+                                                <div class="lineNode"><img src="/public/images/lineNode.png" alt=""></div>
+                                                <div class="timeContainer">
+                                                    <pre>这里记录着所有
+                                                        得故事。
+                                                        我们相爱的  不爱的
+                                                        。。。</pre>
+                                                </div>
+                                            </li>
+                                            <li class="timeList clearfix">
+                                                <div class="timeShow">2017-08-02</div>
+                                                <div class="lineNode"><img src="/public/images/lineNode.png" alt=""></div>
+                                                <div class="timeContainer">
+                                                    <pre>这里记录着所有     all world</pre>
+                                                </div>
+                                            </li>
+                                            <li class="timeList clearfix">
+                                                <div class="timeShow">2017-08-02</div>
+                                                <div class="lineNode"><img src="/public/images/lineNode.png" alt=""></div>
+                                                <div class="timeContainer">
+                                                    <pre>这里记录着所有
+                                                        我们相爱的  不爱</pre>
+                                                </div>
+                                            </li>
+                                            <li class="timeList clearfix">
+                                                <div class="timeShow">2017-08-02</div>
+                                                <div class="lineNode"><img src="/public/images/lineNode.png" alt=""></div>
+                                                <div class="timeContainer">
+                                                    <pre>这里记录着所有得故事。
+                                                        我们相爱的  不爱的
+                                                        。。。</pre>
+                                                </div>
+                                            </li>
+                                            <li class="timeList clearfix">
+                                                <div class="timeShow">2017-08-02</div>
+                                                <div class="lineNode"><img src="/public/images/lineNode.png" alt=""></div>
+                                                <div class="timeContainer">
+                                                    <pre>爱就一个字，我只说一次</pre>
+                                                </div>
+                                            </li>
+                                            <li class="timeList clearfix">
+                                                <div class="timeShow">2017-08-02</div>
+                                                <div class="lineNode"><img src="/public/images/lineNode.png" alt=""></div>
+                                                <div class="timeContainer">
+                                                    <pre>我们今天去了成都欢乐谷，在这里我们留下了太多的美丽。。。
+                                                    尤其是在旁边的小酒店！     因为房钱太TMD贵了</pre>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    function init(){
+        var mseconds = new Date().getTime() - $("#registerDay").val();
+        var days = Math.floor(mseconds / (3600 * 24 *1000));
+        $(".zoomDay").html(days);
+        var num = $(".wrapC-img").height() + parseInt($(".wrapC-top").css("top"));
+        $(".wrapContent").css("height",num + "px");
+    }
+    init();
+</script>
+{% endblock %}

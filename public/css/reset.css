@@ -1,0 +1,43 @@
+html { 
+	font-family: "微软雅黑","Helvetica Neue",Helvetica, sans-serif;	/*设置字体样式*/
+}
+body{
+	font-size: 14px;
+}
+*{		/*通用选择器*/
+	margin: 0;	/*重置浏览器的边距*/
+	padding: 0;
+	/*-webkit-box-sizing: border-box;	!*黑盒子模式*!
+	box-sizing: border-box;*/
+}
+a{
+	display:inline-block;
+	color: #333;
+	text-decoration: none;
+}
+img{
+	border: 0;
+	display: inline-block;
+	width:100%;
+	vertical-align: middle;
+}
+input{
+	outline: none;
+	border: none;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.clearfix:after{
+	content:"";
+	display:block;
+	width:100%;
+	height:0;
+	clear:both;
+}
+li,ol{
+	list-style:none;
+}

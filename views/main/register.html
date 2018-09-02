@@ -1,0 +1,60 @@
+{% extends 'main.html' %}
+{% block main %}
+    <div class="container">
+        <div class="form clearfix">
+            <div class="formTop">
+                <p>免费注册</p>
+            </div>
+            <div id="registerBox">
+                <div class="two-people fl">
+                    <p style="font-size:24px;color:#3c3c3c;font-weight:800;">关于你</p>
+                    <!--<input type="file" name="myphoto" />-->
+                    <div class="imgbox">
+                        <div class="imgnum">
+                            <input type="file" class="filepath" />
+                            <span class="close">X</span>
+                            <img src="/public/images/btn.png" alt="点击添加头像" class="img1" />
+                            <img src="" class="img2" name="myphoto" />
+                        </div>
+                        <p class="addimg">添加头像</p>
+                    </div>
+                    <p style="margin-top:190px;">邮箱</p>
+                    <input type="email" name="email" placeholder="你的邮箱" />
+                    <p>昵称</p>
+                    <input type="text" name="myname" placeholder="你的昵称" />
+                </div>
+                <div class="two-people fr">
+                    <p style="font-size:24px;color:#3c3c3c;font-weight:800;">关于另一半</p>
+                    <!--<input type="file" name="yourphoto" />-->
+                    <div class="imgbox">
+                        <div class="imgnum">
+                            <input type="file" class="filepath" />
+                            <span class="close">X</span>
+                            <img src="/public/images/btn.png" alt="点击添加头像" class="img1" />
+                            <img src="" class="img2" name="yourphoto" />
+                        </div>
+                        <p class="addimg">添加头像</p>
+                    </div>
+                    <p style="margin-top:190px;">邮箱</p>
+                    <input type="email" name="youremail" placeholder="另一半的邮箱" />
+                    <p>昵称</p>
+                    <input type="text" name="yourname" placeholder="另一半的昵称" />
+                </div>
+                <div class="two-people pwd" style="width:100%;">
+                    <p style="font-size:24px;color:#3c3c3c;font-weight:800;">共同密码</p>
+                    <span>既然你们已经分享了一个世界，为什么不分享一个密码？</span><br/>
+                    <span>在两个人你们可以使用同一个密码来登录（别忘了告诉另一半哦）。</span><br>
+                    <input type="password" name="password" placeholder="共同密码" /><br>
+                    <span>再来一个小秘密，你们交往的日子是多久？写下来让我们来继续见证吧。</span>
+                    <input type="text" name="date" placeholder="格式是：2017-07-01" />
+                </div>
+                <p class="err-info" style="margin-left:5%;color:red;height:20px;"></p>
+                <div class="form-foot">
+                    <p>您点击提交按钮后意味着您同意我们的 <a class="ffa" href="#">使用条款</a> 和 <a class="ffa" href="#">隐私政策.</a></p>
+                    <input class="submit" type="submit" value="注册，走着！" id="register" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
